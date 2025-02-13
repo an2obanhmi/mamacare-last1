@@ -1,0 +1,51 @@
+.service-info {
+    text-align: center;
+    color: #333;
+  }
+  
+  .service-title {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #333;
+  }
+  
+  .divider {
+    width: 60px;
+    height: 4px;
+    background-color: #33cccc;
+    margin: 10px auto 20px;
+  }
+  
+  .description {
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: 20px;
+  }
+  
+  .section-title {
+    color: #33cccc;
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-top: 20px;
+  }
+  
+  .challenges, .benefits {
+    list-style-type: disc;
+    text-align: left;
+    margin: 0 auto;
+    padding: 0;
+    max-width: 600px;
+  }
+  
+  .challenges li, .benefits li {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #333;
+  }
+  
+  .media-recognition {
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-top: 20px;
+  }
+  

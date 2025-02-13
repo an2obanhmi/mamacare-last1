@@ -1,0 +1,70 @@
+/* ServicePay.css */
+
+.servicepay-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #f3f4f6;
+  }
+  
+  .servicepay-card {
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+    width: 400px;
+    max-width: 100%;
+    text-align: center;
+  }
+  
+  .servicepay-title {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: #333;
+  }
+  
+  .servicepay-info {
+    text-align: left;
+    margin-bottom: 20px;
+  }
+  
+  .servicepay-info p {
+    margin: 5px 0;
+    font-size: 16px;
+    color: #555;
+  }
+  
+  .servicepay-total {
+    margin-top: 15px;
+    font-size: 18px;
+    font-weight: bold;
+    color: #111;
+  }
+  
+  .servicepay-qrcode {
+    margin: 20px 0;
+  }
+  
+  .servicepay-qrcode img {
+    width: 150px;
+    height: 150px;
+    border-radius: 8px;
+  }
+  
+  .servicepay-confirm-button {
+    background: #007bff;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background 0.3s;
+  }
+  
+  .servicepay-confirm-button:hover {
+    background: #0056b3;
+  }
+  

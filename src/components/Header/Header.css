@@ -1,0 +1,84 @@
+/* Header.css */
+
+.header {
+  display: flex;
+  top: 0;
+  left: 0;
+  right: 0;
+  padding: 10px 20px;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 3;
+  background-color: rgb(82, 137, 194);
+}
+
+.logo img {
+  max-height: 100px;
+  width: 100px;
+  border-radius: 50%;
+}
+
+.nav {
+  flex-grow: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+.nav-links li a {
+  text-decoration: none;
+  color: aliceblue;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+.nav-links li a:hover {
+  text-decoration-line: underline;
+}
+
+/* User avatar styling */
+.user-info {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.user-avatar {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+}
+
+/* Responsive layout */
+@media (max-width: 768px) {
+  .nav-links {
+    flex-direction: column;
+    gap: 10px;
+  }
+}
+/* Header ở trang Home */
+.header-home {
+  position: absolute; /* Có thể là absolute nếu cần */
+  background-color: transparent;
+  display: flex;
+  top: 0;
+  left: 0;
+  right: 0;
+  padding: 10px 20px;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 3;
+}
+
+.header-home .nav-links li a {
+  color: aliceblue; /* Màu chữ riêng cho Home */
+}
+
+.header-home .nav-links li a:hover {
+  text-decoration-line: underline;
+}

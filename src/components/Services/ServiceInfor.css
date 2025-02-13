@@ -1,0 +1,72 @@
+.service-info {
+  padding: 20px;
+}
+
+.service-title {
+  font-size: 2em;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.section-title {
+  font-size: 1.5em;
+  color: #33cccc;
+  margin-top: 20px;
+}
+
+.service-description,
+.media-recognition {
+  font-size: 1em;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.service-list {
+  padding-left: 20px;
+  margin-bottom: 20px;
+}
+
+.list-item {
+  font-size: 1em;
+  color: #666;
+}
+
+.pricing-table-section {
+  margin-top: 20px;
+}
+
+.pricing-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+}
+
+.pricing-table th,
+.pricing-table td {
+  padding: 10px;
+  border: 1px solid #ddd;
+  text-align: center;
+}
+
+.pricing-table th {
+  background-color: #5289c2;
+  color: #333;
+}
+
+.pricing-table td ul {
+  padding-left: 15px;
+  text-align: left;
+}
+
+@media (max-width: 768px) {
+  .pricing-table,
+  .service-info {
+    font-size: 0.9em;
+  }
+
+  .service-title,
+  .section-title {
+    font-size: 1.5em;
+  }
+}

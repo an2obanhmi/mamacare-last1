@@ -1,0 +1,344 @@
+/* Home.css */
+.home {
+  position: relative;
+  overflow: hidden; /* Đảm bảo rằng nội dung không tràn ra ngoài */
+
+  width: 100wh;
+}
+
+.carousel-image {
+  position: relative;
+  width: 100%; /* Chiếm toàn bộ chiều rộng của slider */
+  height: auto; /* Chiều cao tự động, giữ tỉ lệ của ảnh */
+  max-height: 100vh; /* Chiều cao tối đa là chiều cao của viewport */
+  object-fit: cover; /* Đảm bảo ảnh không bị biến dạng và đầy đủ trong khung */
+  filter: brightness(65%);
+}
+
+.slick-slider {
+  margin: 0; /* Loại bỏ margin */
+}
+
+.slider-container {
+  position: relative; /* Để có thể sử dụng position absolute cho các thành phần khác */
+  width: 100%; /* Chiếm toàn bộ chiều rộng */
+  overflow: hidden; /* Ẩn bất kỳ phần nào của ảnh tràn ra ngoài */
+}
+
+.slick-slide {
+  height: 100%; /* Đảm bảo mỗi slide chiếm toàn bộ chiều cao */
+}
+
+.slider-background {
+  position: absolute; /* Để nó nằm dưới các phần tử khác */
+  top: 0;
+  left: 0;
+  width: 100%; /* Chiếm toàn bộ chiều rộng */
+  height: 100%; /* Chiếm toàn bộ chiều cao */
+  z-index: -1; /* Để đảm bảo ảnh nền nằm dưới */
+  object-fit: cover; /* Giữ tỉ lệ ảnh, không làm méo */
+}
+
+.home-content {
+  position: absolute; /* Để đặt nội dung lên trên slider */
+  top: 50%; /* Đặt ở giữa màn hình */
+  left: 50%;
+  transform: translate(-50%, -50%); /* Đẩy nội dung về giữa */
+  color: white; /* Màu chữ */
+  text-align: center; /* Căn giữa chữ */
+  z-index: 1; /* Đảm bảo nội dung nằm trên slider */
+}
+
+/* Carousel image styling */
+.carousel-image {
+  width: 100%;
+  height: auto;
+}
+
+/* Services section styling */
+
+.cta-button a {
+  display: inline-block;
+  padding: 10px 20px;
+  font-weight: 700;
+  color: rgb(82, 137, 194);
+  text-decoration: none;
+  border-radius: 12px;
+  border: solid 1px rgb(82, 137, 194);
+  transition: 0.5s;
+}
+
+.cta-button a:hover {
+  background-color: rgb(82, 137, 194);
+  color: aliceblue;
+  transition: 0.5s;
+}
+
+/* Feedback section layout */
+.feedback-section {
+  padding: 50px 0;
+  background-color: #f9f9f9;
+  position: relative;
+}
+
+.feedback-title .title {
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+.divider {
+  width: 100px;
+  height: 4px;
+  background-color: rgb(82, 137, 194);
+  margin: 0 auto 20px;
+}
+
+.feedback-layout {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 30px;
+}
+
+.main-feedback {
+  flex: 3;
+  background-color: white;
+  padding: 30px;
+  border-radius: 10px;
+  position: relative;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.quote {
+  font-size: 4rem;
+  color: #eae4c0;
+}
+
+.main-feedback-text {
+  font-size: 1.2rem;
+  margin: 20px 0;
+  color: #333;
+}
+
+.main-feedback-author {
+  display: flex;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.main-feedback-author img {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  margin-right: 15px;
+}
+
+.main-feedback-author .name {
+  font-weight: bold;
+}
+
+.author-images {
+  display: flex;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.author-images img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+}
+
+/* Side feedback cards */
+.side-feedback {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.feedback-card {
+  background-color: white;
+  padding: 15px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.feedback-card img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  margin-right: 15px;
+}
+
+.feedback-content .name {
+  font-weight: bold;
+}
+
+.feedback-content .text {
+  font-size: 0.9rem;
+  color: #666;
+}
+
+.home-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  text-align: center;
+  background-color: rgb(82, 137, 194);
+}
+
+.home-title {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 40px;
+  position: relative;
+}
+
+.product-category-container {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 50px;
+}
+
+.home-container {
+  padding: 40px;
+}
+
+.home-title {
+  text-align: center;
+  font-size: 28px;
+  font-weight: 600;
+  margin-bottom: 30px;
+  color: #333;
+}
+
+.product-category-container {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 40px;
+}
+
+.product-category {
+  display: flex;
+  align-items: center;
+  background-color: rgb(82, 137, 194);
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  width: 48%;
+  padding: 20px;
+}
+
+.category-info {
+  flex: 1;
+  margin-right: 20px;
+}
+
+.category-info h4 {
+  color: #777;
+  font-size: 16px;
+  margin-bottom: 5px;
+}
+
+.category-info h3 {
+  color: #333;
+  font-size: 22px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.category-info p {
+  color: #666;
+  font-size: 14px;
+}
+
+.category-image {
+  width: 120px;
+  height: auto;
+}
+
+.product-list {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.product-card {
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  width: 23%;
+  text-align: center;
+  padding: 15px;
+  margin-bottom: 20px;
+  transition: all 0.3s ease-in-out;
+}
+.product-card a {
+  text-decoration: none;
+}
+
+.product-card:hover {
+  transform: translateY(-5px);
+}
+
+.product-image {
+  width: 100%;
+  height: auto;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 10px;
+  margin-bottom: 10px;
+}
+
+.product-card h4 {
+  font-size: 18px;
+  font-weight: bold;
+  color: #333;
+}
+
+.product-price {
+  font-size: 16px;
+  color: #00bcd4;
+  font-weight: bold;
+}
+/*video*/
+.section.zek_home_video {
+  padding: 50px 0;
+  background-color: #f9f9f9;
+}
+
+.zek_home_title {
+  margin-bottom: 30px;
+}
+
+.zek_home_title .title {
+  font-size: 32px;
+  color: #333;
+  font-weight: bold;
+}
+
+.zek_home_title .divider {
+  width: 60px;
+  height: 4px;
+  background-color: rgb(82, 137, 194);
+  margin: 10px auto;
+}
+
+.zek_block {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.zek_block .item {
+  flex: 1 1 30%;
+  margin-bottom: 20px;
+  max-width: 30%;
+}
+
+.zek_block .video iframe {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}

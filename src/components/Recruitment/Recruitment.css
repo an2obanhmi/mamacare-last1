@@ -1,0 +1,124 @@
+/* Recruitment.css */
+
+/* Container chính */
+.recruitment-container {
+  max-width: 1200px;
+  margin: auto;
+  padding: 20px;
+  background-color: #f9f9f9;
+}
+
+/* Tiêu đề trang */
+.recruitment-title {
+  font-size: 2em;
+  text-align: center;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+/* Layout danh sách công việc */
+.job-listings {
+  display: grid;
+  grid-template-columns: repeat(
+    auto-fit,
+    minmax(280px, 1fr)
+  ); /* Responsive grid */
+  gap: 20px;
+  justify-content: center;
+}
+
+/* Card công việc */
+.job-card {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.job-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Tiêu đề công việc */
+.job-title {
+  font-size: 1.5em;
+  color: rgba(82, 137, 194);
+}
+
+/* Thông tin công việc */
+.job-location,
+.job-type,
+.job-salary,
+.job-description {
+  margin: 8px 0;
+  color: #555;
+}
+
+/* Nút Ứng tuyển */
+.apply-button {
+  background-color: rgb(82, 137, 194);
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  text-align: center;
+  margin-top: 15px;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.apply-button:hover {
+  background-color: rgb(255, 140, 150);
+}
+
+/* Hình ảnh minh họa công việc */
+.job-image {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  margin-bottom: 15px;
+}
+
+/* Responsive cho màn hình nhỏ hơn 768px */
+@media (max-width: 768px) {
+  .recruitment-title {
+    font-size: 1.8em;
+  }
+
+  .job-card {
+    padding: 15px;
+  }
+
+  .job-title {
+    font-size: 1.3em;
+  }
+
+  .apply-button {
+    padding: 8px 12px;
+    font-size: 0.9em;
+  }
+}
+
+/* Responsive cho màn hình nhỏ hơn 480px */
+@media (max-width: 480px) {
+  .recruitment-container {
+    padding: 10px;
+  }
+
+  .job-card {
+    padding: 10px;
+  }
+
+  .job-title {
+    font-size: 1.2em;
+  }
+
+  .apply-button {
+    padding: 6px 10px;
+    font-size: 0.8em;
+  }
+}

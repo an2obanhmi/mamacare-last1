@@ -1,0 +1,157 @@
+/* Fullscreen slideshow section */
+.slideshow-section {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.containimage {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+#slideshow {
+  display: flex;
+  width: 300%; /* To fit all images for sliding */
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  animation: slideshow 15s infinite;
+}
+
+.imageflex {
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover; /* Ensures the images cover the entire screen without stretching */
+  flex-shrink: 0; /* Prevents images from shrinking */
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(
+    0,
+    0,
+    0,
+    0.5
+  ); /* Dark overlay for better text readability */
+}
+
+.esb {
+  color: rgb(82, 137, 194);
+  font-size: 2rem;
+  text-align: center;
+  font-weight: bold;
+}
+
+/* Keyframes for slideshow animation */
+@keyframes slideshow {
+  0% {
+    transform: translateX(0);
+  }
+  33% {
+    transform: translateX(-100vw);
+  }
+  66% {
+    transform: translateX(-200vw);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+/* Resources.css */
+
+.career-content {
+  max-width: 800px;
+  margin: 40px auto;
+  padding: 20px;
+  text-align: center;
+}
+
+.career-content h2 {
+  color: rgb(82, 137, 194);
+  font-size: 2em;
+  margin-bottom: 20px;
+}
+
+.career-content p {
+  font-size: 1em;
+  line-height: 1.5em;
+  color: #555;
+}
+
+/* Belief section styling */
+.belief-section {
+  background-color: #f5f5f5;
+  padding: 50px 20px;
+}
+
+.beliefcon {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.bcards {
+  background-color: rgb(82, 137, 194);
+  color: white;
+  width: 220px;
+  padding: 20px;
+  border-radius: 8px;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.bcards h3 {
+  font-size: 1.2em;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+.bcards p {
+  font-size: 0.9em;
+  line-height: 1.4;
+}
+
+/* Footer styling */
+.footer {
+  background-color: rgb(82, 137, 194);
+  color: white;
+  text-align: center;
+  padding: 20px 0;
+  margin-top: 40px;
+}
+
+.footercontainer nav {
+  margin-bottom: 10px;
+}
+
+.footercontainer img {
+  width: 30px;
+  height: 30px;
+  margin: 0 10px;
+  vertical-align: middle;
+}
+
+.nlogo {
+  width: 100px;
+  margin-top: 20px;
+}
+
+.footer p {
+  margin: 10px 0 0;
+  font-size: 0.9em;
+}

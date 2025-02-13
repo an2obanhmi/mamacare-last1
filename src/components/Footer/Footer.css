@@ -1,0 +1,29 @@
+.footer {
+  background-color: rgb(82, 137, 194);
+  color: #fff;
+  padding: 20px 40px;
+  height: auto; /* Height will adjust based on content */
+  display: flex;
+  justify-content: center;
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-between; /* Đảm bảo spacing giữa các item */
+  align-items: center;
+  width: 100%;
+  max-width: 1200px; /* Giới hạn độ rộng tối đa */
+  flex-wrap: wrap; /* Cho phép wrapping trên các màn hình nhỏ */
+}
+
+.footer-info {
+  text-align: center;
+  flex: 1;
+  display: flex;
+  justify-content: center; /* Căn giữa phần thông tin theo chiều ngang */
+  flex-direction: column; /* Đảm bảo phần thông tin được xếp dọc */
+}
+
+.footer-info h4 {
+  font-size: 1.5rem;
+}

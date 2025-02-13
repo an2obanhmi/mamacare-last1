@@ -1,0 +1,122 @@
+/* ServiceDetail.css */
+
+.service-detail-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.service-info {
+  text-align: left;
+}
+
+.service-title {
+  font-size: 2.5rem;
+  color: #333;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.service-description {
+  font-size: 1rem;
+  color: #666;
+  line-height: 1.6;
+}
+
+.service-section {
+  margin-top: 30px;
+}
+
+.section-title {
+  font-size: 1.5rem;
+  color: rgb(82, 137, 194);
+  margin-bottom: 10px;
+}
+
+.service-list {
+  list-style-type: disc;
+  padding-left: 20px;
+}
+
+.list-item {
+  font-size: 1rem;
+  margin-bottom: 5px;
+  color: #555;
+}
+
+.media-recognition {
+  font-size: 1rem;
+  color: #777;
+}
+
+.service-form {
+  margin-top: 40px;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background-color: #f9f9f9;
+}
+
+.form-title {
+  font-size: 1.5rem;
+  color: #333;
+  margin-bottom: 15px;
+}
+
+.form-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-label {
+  margin-bottom: 5px;
+  color: #333;
+}
+
+.form-input,
+.form-textarea {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 15px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.submit-button {
+  background-color: #00bcd4;
+  color: white;
+  padding: 10px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+.submit-button:hover {
+  background-color: #0097a7;
+}
+
+@media (max-width: 768px) {
+  .service-detail-container {
+    padding: 10px;
+  }
+
+  .service-title {
+    font-size: 2rem;
+  }
+
+  .section-title,
+  .form-title {
+    font-size: 1.3rem;
+  }
+
+  .form-input,
+  .form-textarea {
+    padding: 6px;
+  }
+
+  .submit-button {
+    padding: 8px;
+    font-size: 0.9rem;
+  }
+}
