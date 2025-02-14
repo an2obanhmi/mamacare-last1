@@ -19,6 +19,7 @@ import RegisterPage from './components/Login/RegisterPage';
 import ProtectedRoute from './components/ProtectedRoute';
 import ServicePay from './components/Services/ServicePay';
 import Product from './components/Product/Product';
+import DoctorDetail from './components/Recruitment/DoctorDetail';
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
@@ -39,6 +40,7 @@ function App() {
                             <Route path="/recruitment" element={<Recruitment />} />
                             <Route path="/product" element={<Product />} />
                             <Route path="/service-pay" element={<ServicePay />} />
+                            <Route path="/doctor/:doctorId" element={<DoctorDetail />} />
                             <Route path="/cart" element={<Cart />} /> {/* Cart page route */}
 
                             {/* Protected route for service details */}

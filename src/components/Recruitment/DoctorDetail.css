@@ -1,0 +1,49 @@
+.doctor-detail-container {
+    max-width: 1200px;
+    margin: auto;
+    padding: 20px;
+  }
+  
+  .doctor-header {
+    text-align: center;
+  }
+  
+  .doctor-image {
+    width: 200px;
+    border-radius: 10px;
+  }
+  
+  .btn-book {
+    background-color: green;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+  }
+  
+  .doctor-info {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+  }
+  
+  .doctor-experience,
+  .doctor-certificates {
+    width: 48%;
+  }
+  
+  h3 {
+    border-bottom: 2px solid green;
+    padding-bottom: 5px;
+  }
+  
+  ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  li {
+    margin-bottom: 10px;
+  }
+  
