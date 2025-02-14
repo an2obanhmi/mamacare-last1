@@ -1,80 +1,97 @@
-  // Resources.js
-  import React from 'react';
-  import './Resources.css';
+import React from "react";
+import { Link } from "react-router-dom";
+import "bootstrap/dist/css/bootstrap.min.css";
+import "./Resources.css";
 
-  const Resources = () => {
-    return (
-      <div className="resources-container">
-        
+const doctors = [
+  {
+    id: "le-thanh-hung",
+    name: "ThS. BS. CKII. Lê Thanh Hùng",
+    position: "Bệnh viện Quốc tế Mỹ (Phó khoa Phụ Sản)",
+    hospitals: ["Bệnh viện Từ Dũ", "Bệnh viện FV", "Bệnh viện Tâm Anh"],
+    lecturer: "Giảng viên Đại học Y Khoa Phạm Ngọc Thạch",
+    experience: [
+      "20 năm kinh nghiệm trong ngành Sản - Phụ khoa",
+      "Giảng viên chuyên ngành tại Đại học Y Dược TP. Hồ Chí Minh",
+      "Từng là chuyên gia đào tạo cho các bệnh viện lớn",
+    ],
+    certificates: [
+      { year: "1998", description: "Tốt nghiệp Đại học Y Dược TP. Hồ Chí Minh" },
+      { year: "2001", description: "Đào tạo chuyên sâu về Sản phụ khoa tại Pháp" },
+      { year: "2004", description: "Tốt nghiệp Thạc sĩ ngành Sản phụ khoa" },
+      { year: "2011", description: "Chứng chỉ chuyên sâu về Siêu âm, nội soi Phụ khoa" },
+    ],
+    image: "/assets/docter1.jpg",
+  },
+  {
+    id: "tran-thi-sang",
+    name: "ThS. Trần Thị Sáng",
+    position: "Bệnh viện Từ Dũ",
+    hospitals: ["Bệnh viện FV", "CMI Việt Nam"],
+    experience: [
+      "15 năm kinh nghiệm trong lĩnh vực điều dưỡng",
+      "Chuyên gia đào tạo tại Bệnh viện Từ Dũ",
+    ],
+    certificates: [
+      { year: "2005", description: "Chứng chỉ điều dưỡng chuyên nghiệp" },
+      { year: "2010", description: "Chuyên gia tư vấn y tế tại các bệnh viện lớn" },
+    ],
+    image: "/assets/docter2.jpg",
+  },
+  {
+    id: "huynh-khac-luan",
+    name: "BS. CKI. Huỳnh Khắc Luân",
+    position: "Bệnh viện Nhi Đồng 2",
+    hospitals: [],
+    experience: [
+      "Hơn 10 năm kinh nghiệm trong lĩnh vực Nhi khoa",
+      "Từng làm việc tại các bệnh viện hàng đầu về Nhi khoa",
+    ],
+    certificates: [
+      { year: "2007", description: "Bằng chuyên khoa I về Nhi khoa" },
+      { year: "2015", description: "Đào tạo nâng cao về Chăm sóc trẻ sơ sinh" },
+    ],
+    image: "/assets/docter3.jpg",
+  },
+];
 
-        <section className="slideshow-section">
-          <div className="containimage">
-            <div id="slideshow">
-              <img className="imageflex" src="/assets/Docter.jpg" alt="Slide 1" />
-              <img className="imageflex" src="/assets/Nurses.jpg" alt="Slide 2" />
-              <img className="imageflex" src="/assets/dieuduong.jpg" alt="Slide 3" />
-            </div>
-            <div className="overlay">
-              <h1 className="esb">Đội ngũ bác sĩ tận tâm đến từ MamaCare</h1>
+const Resources = () => {
+  return (
+    <div className="resources-container text-center my-5">
+      <h2 className="mb-4">Đội ngũ bác sĩ chuyên môn</h2>
+      <p className="text-muted">
+        Bác sĩ Mamacare chịu trách nhiệm hỗ trợ trong các liệu trình chăm sóc và đào tạo.
+      </p>
+      <div className="row">
+        {doctors.map((doctor) => (
+          <div className="col-md-4 mb-4" key={doctor.id}>
+            <div className="card shadow-sm">
+              <img
+                src={doctor.image}
+                alt={doctor.name}
+                className="card-img-top"
+              />
+              <div className="card-body">
+                <h5 className="card-title">{doctor.name}</h5>
+                <p className="card-text">{doctor.position}</p>
+                {doctor.hospitals.length > 0 && (
+                  <ul className="list-unstyled">
+                    {doctor.hospitals.map((hospital, idx) => (
+                      <li key={idx}>{hospital}</li>
+                    ))}
+                  </ul>
+                )}
+                <div className="d-flex justify-content-around">
+                  <Link to={`/doctor/${doctor.id}`} className="btn btn-success">CHI TIẾT</Link>
+                  <button className="btn btn-primary">VIDEO</button>
+                </div>
+              </div>
             </div>
           </div>
-        </section>
-
-        <section className="career-content">
-          <h2>Đến với chúng tôi</h2>
-          <p>Bệnh viện và phòng khám cao cấp của MamaCare cung cấp các tiêu chuẩn chăm sóc bệnh nhân cao nhất cho người dân Việt Nam.</p>
-        </section>
-
-        <section className="career-content">
-          <h2>Chúng tôi là ai ? </h2>
-          <p>MamaCare cung cấp các giải pháp tiếp thị linh hoạt</p>
-        </section>
-
-        <section className="belief-section">
-          <div className="beliefcon">
-            <div className="bcards">
-              <h3>Tập trung vào khách hàng</h3>
-              <p>Chúng tôi quan tâm đến khách hàng của chúng tôi. Chăm sóc khách hàng ,phát triển là ưu tiên hàng đầu khi chúng tôi cung cấp các giải pháp sáng tạo, nhanh chóng cho khách hàng của mình.</p>
-            </div>
-            <div className="bcards">
-              <h3>Cải thiện quy trình</h3>
-              <p>Chúng tôi tìm kiếm những cách tốt nhất để giải quyết vấn đề. Bằng cách tập trung vào cách chúng ta có thể làm điều gì đó tốt hơn, chúng ta có thể hoàn thành các trị liệu dễ dàng và hiệu quả hơn.</p>
-            </div>
-            <div className="bcards">
-              <h3>Chấp nhận rủi ro</h3>
-              <p>Táo bạo và chấp nhận rủi ro bằng cách theo đuổi những ý tưởng mới</p>
-            </div>
-            <div className="bcards">
-              <h3>Tận hưởng công việc</h3>
-              <p>Chúng tôi yêu những gì chúng tôi làm. trở thành chuyên gia trong lĩnh vực chúng tôi làm và cảm thấy vui vẻ khi làm việc đó.</p>
-            </div>
-          </div>
-        </section>
-
-        <section className="career-content">
-          <h2>Our Culture</h2>
-          <p>It is our team who makes MamaCare...</p>
-        </section>
-
-        <section className="career-content">
-          <h2>Current Opportunities</h2>
-          <a href="/current-opportunities" className="view-jobs-button">View Jobs</a>
-        </section>
-
-        <footer className="footer">
-          <div className="footercontainer">
-            <nav>
-              <a href="https://www.facebook.com/profile.php?id=61566899712534"><img src="https://sinalite.com/media/images/socialmedia-icon/linkedin.png" alt="LinkedIn" /></a>
-              <a href="https://www.facebook.com/profile.php?id=61566899712534"><img src="https://sinalite.com/media/images/socialmedia-icon/youtube.png" alt="YouTube" /></a>
-              <a href="https://www.facebook.com/profile.php?id=61566899712534"><img src="https://sinalite.com/media/images/socialmedia-icon/facebook.png" alt="Facebook" /></a>
-              <a href="https://www.facebook.com/profile.php?id=61566899712534"><img src="https://sinalite.com/media/images/socialmedia-icon/twitter.png" alt="Twitter" /></a>
-            </nav>
-            <img className="nlogo" src="/assets/icon.jpg" alt="Logo" />
-            <p>© 2024 | All rights reserved.</p>
-          </div>
-        </footer>
+        ))}
       </div>
-    );
-  };
+    </div>
+  );
+};
 
-  export default Resources;
+export default Resources;

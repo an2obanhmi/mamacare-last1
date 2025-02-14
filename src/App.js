@@ -19,7 +19,7 @@ import RegisterPage from './components/Login/RegisterPage';
 import ProtectedRoute from './components/ProtectedRoute';
 import ServicePay from './components/Services/ServicePay';
 import Product from './components/Product/Product';
-import DoctorDetail from './components/Recruitment/DoctorDetail';
+import DoctorDetail from './components/Resources/DoctorDetail';
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
