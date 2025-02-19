@@ -35,7 +35,7 @@ function Header() {
                             <a href="/login">Đăng Ký / Đăng Nhập</a>
                         )}
                     </li>
-                    <li>
+                    <li className='cart-edit'>
                         <a href="/cart">🛒 {totalItems}</a> {/* Display total items in cart */}
                     </li>
                 </ul>

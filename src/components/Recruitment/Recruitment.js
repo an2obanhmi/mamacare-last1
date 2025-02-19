@@ -38,7 +38,7 @@ const Recruitment = () => {
             <h2 className="job-title">{job.title}</h2>
             <p className="job-location"><strong>Địa điểm:</strong> {job.location}</p>
             <p className="job-type"><strong>Loại công việc:</strong> {job.type}</p>
-            <p className="job-salary"><strong>Mức lương:</strong> {job.salary}</p>
+            <p className="job-salary"><strong>Cơ Hội Thu Nhập:</strong> {job.salary}</p>
             <p className="job-description">{job.description}</p>
             <button className="apply-button">Ứng tuyển ngay</button>
           </div>

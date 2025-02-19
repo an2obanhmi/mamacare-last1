@@ -14,9 +14,12 @@ const PORT = process.env.PORT || 5000;
 // Cấu hình CORS cho phép kết nối từ frontend chạy trên localhost:5001
 app.use(
   cors({
-    origin: "http://localhost:5001",
+    origin: ["http://localhost:5001", "https://mamacare-latest.vercel.app"],
+    methods: "GET,POST,PUT,DELETE",
+    allowedHeaders: "Content-Type,Authorization",
   })
 );
+
 
 // Middleware để phân tích JSON từ request body
 app.use(express.json());
