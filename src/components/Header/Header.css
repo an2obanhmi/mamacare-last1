@@ -15,8 +15,8 @@
 .logo img {
   max-height: 140px;
   width: 140px;
-  border: 3px solid #ffffff; /* Viền màu xanh */
-  border-radius: 50%; /* Bo góc nhẹ */
+  border: 3px solid #ffffff;
+  border-radius: 50%;
 }
 
 .nav {
@@ -63,9 +63,10 @@
     gap: 10px;
   }
 }
+
 /* Header ở trang Home */
 .header-home {
-  position: absolute; /* Có thể là absolute nếu cần */
+  position: absolute;
   background-color: transparent;
   display: flex;
   top: 0;
@@ -78,13 +79,36 @@
 }
 
 .header-home .nav-links li a {
-  color: aliceblue; /* Màu chữ riêng cho Home */
+  color: aliceblue;
 }
 
 .header-home .nav-links li a:hover {
   text-decoration-line: underline;
 }
-.cart-edit{
-  transform: scale(2);
+
+/* 🌟 Hiệu ứng rung khi giỏ hàng được cập nhật */
+.cart-icon.shake {
+  animation: shakeCart 0.5s ease-in-out;
+}
+
+@keyframes shakeCart {
+  0%, 100% { transform: translateX(0); }
+  20% { transform: translateX(-4px); }
+  40% { transform: translateX(4px); }
+  60% { transform: translateX(-4px); }
+  80% { transform: translateX(4px); }
+}
+
+/* 🛒 Căn chỉnh giỏ hàng */
+.cart-edit {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
   padding: 5px;
+}
+
+.cart-icon img {
+  width: 40px;
+  height: 40px;
 }

@@ -1,14 +1,30 @@
-import React, { useContext } from 'react';
-import { useLocation } from 'react-router-dom'; // Import useLocation
+// src/components/Header/Header.js
+import React, { useContext, useState, useEffect } from 'react';
+import { useLocation } from 'react-router-dom';
 import { useCart } from '../CartTemp/CartContext';
 import { UserContext } from '../UserContext';
 import './Header.css';
 
 function Header() {
-    const location = useLocation(); // Lấy thông tin đường dẫn hiện tại
-    const isHome = location.pathname === '/'; // Kiểm tra nếu đang ở trang Home
+    const location = useLocation();
+    const isHome = location.pathname === '/';
     const { user, logout } = useContext(UserContext);
-    const { totalItems } = useCart(); // Access totalItems from CartContext
+    const { totalItems } = useCart(); 
+    
+    const [isShaking, setIsShaking] = useState(false);
+    const [cartIcon, setCartIcon] = useState("/assets/cart0.png");
+
+    useEffect(() => {
+        if (totalItems > 0) {
+            setIsShaking(true);
+            setCartIcon(`/assets/cart${totalItems}.png`);
+            setTimeout(() => {
+                setIsShaking(false);
+            }, 500);
+        } else {
+            setCartIcon("/assets/cart0.png");
+        }
+    }, [totalItems]);
 
     return (
         <header className={`header ${isHome ? 'header-home' : 'header-default'}`}>
@@ -28,15 +44,17 @@ function Header() {
                         {user ? (
                             <div className="user-info">
                                 <img src="/assets/user.jpg" alt="User Avatar" className="user-avatar" />
-                                <span>{user.username}</span> {/* Display username */}
+                                <span>{user.username}</span> 
                                 <button onClick={logout}>Đăng Xuất</button>
                             </div>
                         ) : (
                             <a href="/login">Đăng Ký / Đăng Nhập</a>
                         )}
                     </li>
-                    <li className='cart-edit'>
-                        <a href="/cart">🛒 {totalItems}</a> {/* Display total items in cart */}
+                    <li className="cart-edit">
+                        <a href="/cart" className={`cart-icon ${isShaking ? "shake" : ""}`}>
+                            <img src={cartIcon} alt="Cart" className="cart-image" />
+                        </a> 
                     </li>
                 </ul>
             </nav>

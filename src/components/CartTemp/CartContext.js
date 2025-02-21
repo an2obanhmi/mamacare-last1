@@ -1,42 +1,53 @@
-// src/components/Cart/CartContext.js
-import React, { createContext, useState, useContext } from 'react';
+// src/components/CartTemp/CartContext.js
+import React, { createContext, useState, useEffect, useContext } from "react";
 
 const CartContext = createContext();
 
 export const useCart = () => useContext(CartContext);
 
 export const CartProvider = ({ children }) => {
-  const [cart, setCart] = useState([]);
+  // Load giỏ hàng từ localStorage khi trang load
+  const [cart, setCart] = useState(() => {
+    const savedCart = JSON.parse(localStorage.getItem("cart"));
+    return savedCart || [];
+  });
+
+  // Lưu giỏ hàng vào localStorage khi giỏ hàng thay đổi
+  useEffect(() => {
+    localStorage.setItem("cart", JSON.stringify(cart));
+  }, [cart]);
 
   const addToCart = (product, quantity = 1) => {
-    setCart(prevCart => {
-      const existingProduct = prevCart.find(item => item.id === product.id);
-      if (existingProduct) {
-        return prevCart.map(item =>
-          item.id === product.id ? { ...item, quantity: item.quantity + quantity } : item
-        );
+    setCart((prevCart) => {
+      let updatedCart = [...prevCart];
+      const existingProductIndex = updatedCart.findIndex((item) => item.id === product.id);
+
+      if (existingProductIndex !== -1) {
+        updatedCart[existingProductIndex].quantity += quantity;
+      } else {
+        updatedCart.push({ ...product, quantity });
       }
-      return [...prevCart, { ...product, quantity }];
+
+      localStorage.setItem("cart", JSON.stringify(updatedCart));
+      return updatedCart;
     });
   };
 
   const removeFromCart = (productId) => {
-    setCart(prevCart => prevCart.filter(item => item.id !== productId));
+    setCart((prevCart) => prevCart.filter((item) => item.id !== productId));
   };
 
   const updateQuantity = (productId, quantity) => {
-    setCart(prevCart =>
-      prevCart.map(item =>
+    if (quantity < 1) return;
+    setCart((prevCart) =>
+      prevCart.map((item) =>
         item.id === productId ? { ...item, quantity } : item
       )
     );
   };
 
-  // Calculate total items in cart
-  const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
-
   return (
-    <CartContext.Provider value={{ cart, totalItems, addToCart, removeFromCart, updateQuantity }}>
+    <CartContext.Provider value={{ cart, addToCart, removeFromCart, updateQuantity }}>
       {children}
     </CartContext.Provider>
   );

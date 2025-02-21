@@ -60,4 +60,97 @@
   .submit-btn:hover {
     background-color: #0097a7;
   }
-  
+  /* src/components/Product/ProductDetail.css */
+
+/* 🌟 Hiệu ứng "+1" khi thêm vào giỏ hàng */
+.cart-add-effect {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  font-size: 1.5em;
+  font-weight: bold;
+  color: green;
+  opacity: 1;
+  transform: translate(-50%, -50%);
+  animation: floatUp 1s ease-out forwards;
+}
+
+@keyframes floatUp {
+  0% {
+      opacity: 1;
+      transform: translate(-50%, -50%) scale(1);
+  }
+  100% {
+      opacity: 0;
+      transform: translate(-50%, -150%) scale(1.5);
+  }
+}
+
+/* 🚀 Hiệu ứng thông báo khi thêm vào giỏ hàng */
+.cart-notification {
+  position: fixed;
+  top: 10%;
+  right: 10%;
+  background-color: rgba(0, 128, 0, 0.9);
+  color: white;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-size: 1.2em;
+  animation: fadeInOut 1.5s ease-in-out;
+}
+
+@keyframes fadeInOut {
+  0% {
+      opacity: 0;
+      transform: translateX(100%);
+  }
+  20% {
+      opacity: 1;
+      transform: translateX(0);
+  }
+  80% {
+      opacity: 1;
+      transform: translateX(0);
+  }
+  100% {
+      opacity: 0;
+      transform: translateX(100%);
+  }
+}
+
+/* 🛒 Hiệu ứng rung (shake) cho giỏ hàng */
+.cart-icon.shake {
+  animation: shakeCart 0.5s ease-in-out;
+}
+
+@keyframes shakeCart {
+  0%, 100% {
+      transform: translateX(0);
+  }
+  25% {
+      transform: translateX(-5px);
+  }
+  50% {
+      transform: translateX(5px);
+  }
+  75% {
+      transform: translateX(-5px);
+  }
+}
+
+/* 🚀 Nút "Thêm vào giỏ hàng" */
+.add-to-cart-btn {
+  background-color: #ff6600;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 5px;
+  font-size: 1.2em;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.add-to-cart-btn:hover {
+  background-color: #ff4500;
+  transform: scale(1.1);
+}

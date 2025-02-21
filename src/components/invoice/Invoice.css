@@ -1,0 +1,54 @@
+/* Invoice.css */
+
+.invoice-container {
+  max-width: 600px;
+  margin: auto;
+  padding: 20px;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.invoice-details {
+  margin-bottom: 20px;
+}
+
+.invoice-item {
+  border-bottom: 1px solid #ddd;
+  padding: 10px 0;
+}
+
+.qr-code {
+  margin: 20px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.qr-image {
+  width: 80%; /* Chiếm 80% chiều rộng khung hình */
+  max-width: 300px; /* Giới hạn kích thước tối đa */
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.confirm-btn {
+  padding: 10px 20px;
+  background: rgb(82,137,194);
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.confirm-btn:hover {
+  background: rgb(60,110,170);
+}
+
+.success-message {
+  margin-top: 15px;
+  color: green;
+  font-weight: bold;
+}
