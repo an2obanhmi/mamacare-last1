@@ -4,6 +4,7 @@ import { useNavigate, useLocation } from 'react-router-dom';
 import axios from 'axios';
 import { UserContext } from '../UserContext';
 import './AuthPage.css';
+import { API_URL } from './../../config';
 
 const AuthPage = () => {
     const [email, setEmail] = useState('');
@@ -15,7 +16,7 @@ const AuthPage = () => {
     const handleLogin = async (e) => {
         e.preventDefault();
         try {
-            const response = await axios.post('http://localhost:5000/login', { email, password });
+            const response = await axios.post(`${API_URL}/login`, { email, password });
             alert('Đăng nhập thành công!');
             login({ username: response.data.username, email }); // Lưu thông tin user
             const redirectTo = location.state?.from || '/';
