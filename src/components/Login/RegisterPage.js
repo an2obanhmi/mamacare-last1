@@ -16,7 +16,7 @@ const RegisterPage = () => {
     const handleRegister = async (e) => {
         e.preventDefault();
         try {
-            const response = await axios.post('http://localhost:5000/register', { username, email, password });
+            const response = await axios.post("http://localhost:5000/register", { username, email, password }); 
             alert('Đăng ký thành công! Hãy đăng nhập để tiếp tục.');
             
             // Save username in localStorage and call login function
